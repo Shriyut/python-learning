@@ -32,4 +32,32 @@ while i < 5:
 
 print(i)
 
+for number in range(5):
+    print(number)  # starts with 0
+
+for number in range(1, 11):
+    print(number)  # starts with 1, 11 not included
+
+for number in range(10, 101, 8):
+    print(number)  # iterates over 8 places
+
+print(3 in [1, 2, 3, 4, 5])
+
+
+def contains(values, target):
+    found = False
+    for value in values:
+        if value == target:
+            found = True
+            break
+    return found
+
+
+def sum_of_positive_numbers(values):
+    total = 0
+    for value in values:
+        if value < 0:
+            continue
+        total += value
+    return total
 

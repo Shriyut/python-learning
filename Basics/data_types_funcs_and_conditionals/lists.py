@@ -56,3 +56,81 @@ for index, chore in enumerate(chores):
 # is same as
 for index, chore in enumerate(chores, 1):
     print(f"{chore} is at position {index}")
+
+# to update an element in the list
+numbers[1] = 23
+print(numbers)
+
+chores[1:3] = ["decoration", "building"] # replacing elements in a range of index
+print(chores)
+chores[1:3] = ["nothing"]
+print(chores) #drops one element from the list since we are slicing for 2 places and assigning just one value
+
+
+countries = ["USA", "Germany", "India", "Canada", "Australia"]
+countries.append("Japan") # returns None and adds element to the list at the end of list
+print(countries)
+
+countries.extend(["Singapore", "Thailand"])
+print(countries)
+countries.insert(3, "Kenya")
+print(countries)
+
+countries.pop() # removes last element of the list and returns the element
+print(countries)
+countries.pop(0) # removing element based on an index, -2 - removes second element from the end
+print(countries)
+# del function behaves in the same way as pop but doesn't return the element - del list_name[1]
+
+del countries[1:3]
+print(countries)
+
+# remove method removes a value from the list based on its value not position
+countries.remove("Germany")
+print(countries)
+
+countries.reverse() # returns None
+print(countries)
+print(countries.sort())
+numbers.sort()
+print(numbers)
+
+
+#clear method removes all elements from the list
+countries.clear()
+print(countries)
+
+test_list = ["Techno", "Techno", "RnB", "Punk Rock"]
+print(test_list.count("Techno"))
+print(test_list.index("Techno")) # returns first occurrence of the value -. value error if value doesnt exist, case sensitive
+
+dinner = "chicken and wine"
+items = dinner.split(" ") # returns a list
+print(items)
+
+joined_dinner = ",".join(items) # returns comma separated string of elements from items list
+print(joined_dinner)
+
+breakfasts = ["eggs", "oats"]
+lunches = ["rice", "daal"]
+dinner = ["bhujiya", "roti"]
+
+print(zip(breakfasts, lunches, dinner)) # zip function returns an iterator
+print(list(zip(breakfasts, lunches, dinner)))
+
+for breakfast, lunch, dinner in zip(breakfasts, lunches, dinner):
+    print(f"{breakfast} {lunch} {dinner}") # iterates based on index in each list
+
+
+nested_list = [[1,2,3], ["a","b"]]
+print(nested_list[1][1])
+
+numbers = [3, 4, 5, 6, 7, 8]
+squares = [num ** 2 for num in numbers] # list comprehension - always generates a new list
+print(squares)
+
+#list comprehensions can be used for filtering
+print(["abcdefghijklmnopqrstuvwxyz".index(char) for char in "katakuri"])
+print("abcdefghijklmnopqrstuvwxyz".index(char) for char in "katakuri") # returns generator object above one returns list
+
+print([number / 2 for number in numbers])

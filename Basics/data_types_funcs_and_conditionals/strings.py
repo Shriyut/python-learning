@@ -82,3 +82,4 @@ dinner = "chicken and wine"
 
 for char in dinner:
        print(char)
+
