@@ -33,3 +33,30 @@ def word_multiplier(word: str, times: int) -> str:
 
 
 # functions can be annotated
+
+
+def count_down_from(number):
+    start = number
+    while start > 0:
+        print(start)
+        start -= 1
+
+count_down_from(5)
+
+def recursive_count_down(num):
+    if num == 0:
+        return
+    else:
+        print(num)
+        recursive_count_down(num - 1)
+
+
+recursive_count_down(6)
+
+
+def reverse_string(string):
+    if len(string) == 1:
+        return string
+    return string[-1] + reverse_string(string[0:-1])
+
+print(reverse_string("strawhat"))

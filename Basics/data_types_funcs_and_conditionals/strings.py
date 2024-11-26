@@ -77,3 +77,8 @@ combination = "{one} and {two} and {three}"
 print(combination.format(one=one,two=two,three=three))
 
 print(f"{one} and {two} and {three}")
+
+dinner = "chicken and wine"
+
+for char in dinner:
+       print(char)
