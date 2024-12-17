@@ -60,3 +60,84 @@ def reverse_string(string):
     return string[-1] + reverse_string(string[0:-1])
 
 print(reverse_string("strawhat"))
+
+
+#to get details about a function
+help(print) # class names can also be supplied to the help function
+
+
+# alternative for list comprehensions is map function
+numbers = [4, 8, 15, 16, 23, 42]
+def cube(num):
+    return num ** 3
+
+print(map(cube, numbers)) # returns map iterator object
+print(list(map(cube, numbers))) # returns a list
+
+print(map(len, numbers))
+
+# filter function
+
+animals = ["elephant", "horse", "cat", "giraffe", "dog"]
+# filtering using list comprehension
+long_words = [animal for animal in animals if len(animal) > 5]
+
+def is_long_animal(animal):
+    return len(animal) > 5 # returns naimals with name length > 5 i.e. returns true
+
+print(list(filter(is_long_animal, animals))) # function used with filter must return a boolean
+
+# lambda functions - anonymous function
+metals = ["gold", "silver", "bronze", "tin"]
+print(filter(lambda metal: len(metal) > 5, metals))
+print(map(lambda val: val.repalce("s", "$"), metals))
+
+# these function calls return true
+print(all([True]))
+print(all([]))
+print(all([True, True]))
+print(all(["a", "b"]))
+print(any([True, False]))
+
+# these function results are false
+print(all([True, True, False]))
+print(any([False, False]))
+print(any(["a"]))
+
+num = [1, 2, 3, 4]
+print(max(num))
+print(min(num))
+print(sum(num))
+
+
+print(dir([])) # returns all methods available to the input of dir function
+
+
+float_number = 0.123456789
+print(format(float_number, ".2f")) # format function returns a string and takes a number for formatting
+
+# variable number of arguments
+def accept_stuff(*args):
+    # * allows python to collect any number of positional arguments to teh function and they are stored as a tuple(named args as per this example)
+    print(type(args))
+    print(args)
+
+accept_stuff(1)
+accept_stuff(1,2,3,4,5)
+
+def my_max(nonsense, *args):
+    greatest = args[0]
+    for num in args:
+        if num > greatest:
+            greatest = num
+
+    return greatest
+
+print(my_max(1,3,6,9))
+print(my_max(1, nonsense="asdasdfa"))
+
+def product(a, b):
+    return a * b
+
+numbers = (3,5)
+print(product(*numbers)) # reverse of above approach, along with tuple list can also be used this way
