@@ -134,10 +134,46 @@ def my_max(nonsense, *args):
     return greatest
 
 print(my_max(1,3,6,9))
-print(my_max(1, nonsense="asdasdfa"))
+# print(my_max(1, nonsense="asdasdfa"))
 
 def product(a, b):
     return a * b
 
 numbers = (3,5)
 print(product(*numbers)) # reverse of above approach, along with tuple list can also be used this way
+
+
+#  provide ** to accept keyword arguments even if the function doesn't have any arguments
+def accept_stuff(**kwargs):
+    # ** allows python to collect any number of keyword arguments to teh function and they are stored as a dictionary(named kwargs as per this example)
+    print(type(kwargs))
+    print(kwargs)
+
+accept_stuff(a=1, b=2, c=3)
+accept_stuff(a=1, b=2, c=3, d=4, e=5)
+
+def collect_keyword_args(**kwargs):
+    print(kwargs)
+    return kwargs  # returns a dictionary
+
+def collect_kwargs(**kwargs):
+    print(kwargs)
+    for key, value in kwargs.items():
+        print(key, value)
+
+collect_kwargs(a=1, b=2,c=3)
+
+
+def args_and_kwargs(a, b, *args, **kwargs):
+    # python bundles positional arguments into a tuple and keyword arguments into a dictionary
+    print("args below")
+    print(args)
+    print("kwargs below")
+    print(kwargs)
+    print(a+b)
+    for value in args:
+        print(value)
+    for value in kwargs:
+        print(value)
+
+args_and_kwargs(1, 2, 3, 4, 5, c=6, d=7, e=8)

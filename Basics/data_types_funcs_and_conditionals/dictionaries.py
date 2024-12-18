@@ -99,6 +99,22 @@ numbers = [1, 2, 3, 4, 5]
 squared_numbers = {num: num ** 2 for num in numbers if num % 2 == 0}
 print(squared_numbers)
 
+
+word = "asdfdfhiuqwgfhbr gahdsklgvbfaudfasdgihasdighoasdgiofdasg;"
+letter_count = {letter: word.count(letter) for letter in word}
+print(letter_count)
+
+
+capitals = {
+    "USA": "Washington DC",
+    "France": "Paris",
+    "Italy": "Rome"
+}
+
+# flipping key value pairs in dictionary
+flipped_capitals = {capital: country for country, capital in capitals.items()}
+print(flipped_capitals)
+
 # pop method
 ice_cream_prefs.pop("Tim")  # removes key value pair, returns value, checks if key exists
 print(ice_cream_prefs)
@@ -159,3 +175,18 @@ print(min(employee_salaries))  # returns the minimum key
 print(max(employee_salaries))  # returns the maximum key
 print(min(employee_salaries.values()))  # returns the minimum value
 print(max(employee_salaries.values()))  # returns the maximum value
+
+
+# unpacking argument dictionaries
+def height_to_meters(feet, inches):
+    return feet * 0.3048 + inches * 0.0254
+
+print(height_to_meters(**{"feet": 5, "inches": 11}))  # unpacks the dictionary and passes the key value pairs as arguments
+print(height_to_meters(**{"feet": 6, "inches": 0}))  # unpacks the dictionary and passes the key value pairs as arguments
+
+stats = {
+    # if more keys are passed than required by the function, it will throw an error
+    "feet": 5,
+    "inches": 11
+}
+print(height_to_meters(**stats))  # unpacks the dictionary and passes the key value pairs as arguments
