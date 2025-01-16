@@ -146,6 +146,7 @@ print(employee_salaries)
 employee_salaries_copy = employee_salaries.copy()  # creates a shallow copy
 print(employee_salaries_copy)
 employee_salaries_copy["John"] = 60000
+employee_salaries["Sally"] = 70000
 print(employee_salaries_copy)
 print(employee_salaries)
 
