@@ -1,0 +1,3 @@
+new file 
+second line
+appended line
