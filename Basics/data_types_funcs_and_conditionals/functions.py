@@ -119,7 +119,7 @@ print(format(float_number, ".2f")) # format function returns a string and takes 
 # variable number of arguments
 def accept_stuff(*args):
     # * allows python to collect any number of positional arguments to teh function and they are stored as a tuple(named args as per this example)
-    print(type(args))
+    print(type(args)) # tuple
     print(args)
 
 accept_stuff(1)
@@ -146,7 +146,7 @@ print(product(*numbers)) # reverse of above approach, along with tuple list can 
 #  provide ** to accept keyword arguments even if the function doesn't have any arguments
 def accept_stuff(**kwargs):
     # ** allows python to collect any number of keyword arguments to teh function and they are stored as a dictionary(named kwargs as per this example)
-    print(type(kwargs))
+    print(type(kwargs)) # dictionary
     print(kwargs)
 
 accept_stuff(a=1, b=2, c=3)
