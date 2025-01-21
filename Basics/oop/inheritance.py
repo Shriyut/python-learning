@@ -1,7 +1,9 @@
 # inheritance is a design pattern in which a class inherits(or receives) attributes and methods from one or more classes
 # class inherited from is super class and class that inherits is called the subclass
-# public and protected (that begin with single underscore) attributes and dunder methods are inherited by the subclass
-# private (name mangled attributes that begin with dunder (__) are not inherited by subclass
+# public and protected (that begin with single underscore) attributes
+# and dunder methods are inherited by the subclass
+# private (name mangled attributes that begin with dunder (__) are not inherited
+# by subclass
 # subclass can be described as TYPE OF superclass
 from Basics.oop.polymorphism import Person
 
@@ -63,8 +65,10 @@ class IceCream(FrozenFood, Dessert):
 ic = IceCream()
 ic.add_weight()
 ic.thaw(5)
-ic.store() # store method from FRozenFood class will be invoked since its defined first while inheriting
-# if ice cream has a store method then that will be invoked instead of same method from other two
+ic.store() # store method from FRozenFood class will be invoked
+# since its defined first while inheriting
+# if ice cream has a store method then that will be invoked instead of
+# same method from other two
 
 print(IceCream.mro()) # function to give method resolution order for the class used
 
@@ -112,9 +116,12 @@ class JackOfAllTrades(Director, Screenwriter):
 stallone = JackOfAllTrades()
 stallone.give_interview()
 
-# if the same class (FIlmMaker) occurs multiple times in the method resolution order of inheritance tree
-# python will remove all earlier occurences of the class and keep only the last occurence of the class
-# so here give_interview method will be used from ScreenWriter class regardless of order while inheriting
+# if the same class (FIlmMaker) occurs multiple times in the
+# method resolution order of inheritance tree
+# python will remove all earlier occurences of the class and
+# keep only the last occurence of the class
+# so here give_interview method will be used from ScreenWriter class
+# regardless of order while inheriting
 
 print(JackOfAllTrades.mro())
 

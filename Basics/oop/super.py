@@ -12,7 +12,8 @@ class Dog(Animal):
         self.breed = breed
 
 
-# zoey = Dog() # will result in error with empty Dog class since dunder init method is also inherited and name isnt supplied
+# zoey = Dog() # will result in error with empty Dog class
+# since dunder init method is also inherited and name isnt supplied
 # zoey = Dog("Zoey") # will result in error since breed isnt provided
 zoey = Dog("Zoey", "Labrador")
 print(zoey.eat("chicken"))

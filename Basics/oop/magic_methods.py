@@ -4,7 +4,8 @@
 # magic methods begin and end with dunder (__)
 # dunder methods act as hooks for our classes
 # a hook is a procedure that intercepts a process at some point in its execution
-# magic method is a hook which is called by python behind the scenes at the right moment
+# magic method is a hook which is called by python
+# behind the scenes at the right moment
 
 print(3.3 + 4.4) # python invokes a dunder method to add behind the scenes
 print(3.3.__add__(4.4)) # 7.7

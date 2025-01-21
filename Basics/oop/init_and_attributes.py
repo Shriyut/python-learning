@@ -26,7 +26,7 @@ acoustic.year = 1990
 
 print(acoustic.wood)
 
-class NewGuitarClass():
+class NewGuitarClass:
     def __init__(self, wood, year = 1990):
         # self.wood = "Mahogany" # constant value for each object of this class
         self.wood = wood

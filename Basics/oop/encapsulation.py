@@ -23,8 +23,10 @@ print(iphone.firmware)
 
 class NewSmartPhone():
     def __init__(self):
-        # prefixed _ suggests these attributes are not meant to be modified not hardbound
-        # _ prefix also works for instance methods suggesting it should not be used by developers to call that function
+        # prefixed _ suggests these attributes are not meant to
+        # be modified not hardbound
+        # _ prefix also works for instance methods suggesting
+        # it should not be used by developers to call that function
         # it should only be called by other instance methods
         self._company = "Google"
         self._firmware = 14

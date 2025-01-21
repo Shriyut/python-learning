@@ -49,9 +49,11 @@ starting_players = random.choice(game_players)
 starting_players.make_move()
 
 # name mangling in python
-# intentionally twisting attributes/method names around so that subclasses or after import method with same name is not created
+# intentionally twisting attributes/method names around so that subclasses
+# or after import method with same name is not created
 # an attribute is mangled if it begins with __
-# can be used when there is a probability for subclass to will accidently overwrite something in your superclass
+# can be used when there is a probability for subclass to will accidently
+# overwrite something in your superclass
 
 class Nonsense:
     def __init__(self):
@@ -65,7 +67,8 @@ class SpecialNonsense(Nonsense):
 
 n = Nonsense() # n = Nonsense doesnt instantiate the object so () is required
 sn = SpecialNonsense()
-# print(n.__some_attribute) # results in attribute error saying 'Nonsense' object has no attribute '__some_attribute'
+# print(n.__some_attribute)
+# results in attribute error saying 'Nonsense' object has no attribute '__some_attribute'
 # print(sn.__some_attribute) # same error
 # n.__some_method() # same attribute error
 

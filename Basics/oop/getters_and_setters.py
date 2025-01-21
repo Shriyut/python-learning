@@ -66,7 +66,7 @@ bbq = Pizza(stats)
 print(bbq.ingredients)
 
 for attr in ["price", "name", "diameter", "discount"]:
-    print(getattr(bbq, attr, "Not_Available"))
+    print(getattr(bbq, attr, "Not_Available")) # ['Chicken', 'Onion', 'BBQ sauce']
 
 # dir function returns a list of all attributes associated with the object
 
