@@ -29,3 +29,7 @@ pip3 install requests==2.0
 pip3 install -U requests upgrades requests package
 pip3 freeze gives input of requirements.txt
 pip3 install -r requirements.txt -r denotes the flag for path of file with requirements
+
+python3 -m unittest discover tests
+if executed from parent poker folder
+python3 -m unittest tests/test_card.py
