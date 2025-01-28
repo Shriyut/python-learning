@@ -1,6 +1,19 @@
 class Hand:
-    def __init__(self, cards):
-        copy = cards[:]
+    def __init__(self):
+        # copy = cards[:]
+        # copy.sort()
+        # self.cards = copy
+        self.cards = []
+
+    def __repr__(self):
+        cards_as_strings = [
+            str(card) for card in self.cards
+        ]
+        return ", ".join(cards_as_strings)
+
+    def add_cards(self, cards):
+        copy = self.cards[:]
+        copy.extend(cards)
         copy.sort()
         self.cards = copy
 
@@ -16,17 +29,22 @@ class Hand:
             ("Three of a Kind", self._three_of_a_kind),
             ("Two Pair", self._two_pair),
             ("Pair", self._pair),
-            ("High Card", self._high_card)
+            ("High Card", self._high_card),
+            ("No Cards", self._no_cards)
         )
+
+    def _no_cards(self):
+        return len(self.cards) == 0
 
     def _royal_flush(self):
         is_straight_flush = self._straight_flush()
+        if not is_straight_flush:
+            return False
         is_royal = self.cards[-1].rank == "Ace"
         return is_straight_flush and is_royal
 
     def _straight_flush(self):
         return self._flush() and self._straight() # only works when there are 5 cards
-
 
     def _four_of_a_kind(self):
         ranks_with_four_of_a_kind = self._ranks_with_count(4)
@@ -69,7 +87,7 @@ class Hand:
         return len(ranks_with_pairs) == 1
 
     def _high_card(self):
-        return True
+        return len(self.cards) >= 2
 
     def best_rank(self):
         # card_rank_counts = {}

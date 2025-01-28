@@ -1,9 +1,17 @@
 import unittest
+from unittest.mock import patch
 
 from Basics.Poker.poker.card import Card
 from Basics.Poker.poker.deck import Deck
 
 class DeckTest(unittest.TestCase):
+    def test_has_length_that_is_equal_to_count_of_cards(self):
+        deck = Deck()
+        self.assertEqual(
+            len(deck),
+            0
+        )
+
     def test_stores_no_cards(self):
         deck = Deck()
         self.assertEqual(
@@ -20,3 +28,37 @@ class DeckTest(unittest.TestCase):
             deck.cards,
             [card]
         )
+
+    @patch('random.shuffle')
+    def test_shuffle_cards_in_random_order(self, mock_shuffle):
+        deck = Deck()
+
+        cards = [
+            Card(rank = "Ace", suit = "Spades"),
+            Card(rank = "8", suit = "Diamonds")
+        ]
+
+        deck.add_cards(cards)
+        deck.shuffle()
+
+        mock_shuffle.assert_called_once_with(cards)
+
+
+    def test_removes_n_card_from_deck(self):
+        ace = Card(rank = "Ace", suit = "Spades")
+        eight = Card(rank = "8", suit = "Diamonds")
+        cards = [ace, eight]
+
+        deck = Deck()
+        deck.add_cards(cards)
+
+        self.assertEqual(
+            deck.remove_cards(1),
+            [ace]
+        )
+
+        self.assertEqual(
+            deck.cards,
+            [eight]
+        )
+

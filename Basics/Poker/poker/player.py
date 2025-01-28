@@ -1,0 +1,14 @@
+class Player:
+    def __init__(self, name, hand):
+        self.name = name
+        self.hand = hand # dependency injection
+        # amount to be stored here
+
+    def best_hand(self):
+        return self.hand.best_rank()
+
+    def add_cards(self, cards):
+        self.hand.add_cards(cards)
+
+    def wants_to_fold(self):
+        return False
