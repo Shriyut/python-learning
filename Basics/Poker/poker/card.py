@@ -47,6 +47,8 @@ class Card:
 
     # adding dunder less than to sort the card objects
     def __lt__(self, other):
+        if self.rank == other.rank:
+            return self.suit < other.suit # based on first char of string
         return self.rank_index < other.rank_index
         # current_card_rank_index = self.RANKS.index(self.rank)
         # other_card_rank_index = self.RANKS.index(other.rank)
